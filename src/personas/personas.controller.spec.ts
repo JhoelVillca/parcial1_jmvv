@@ -9,18 +9,7 @@ describe('PersonasController', () => {
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       controllers: [PersonasController],
-      providers: [
-        {
-          provide: PersonasService,
-          useValue: {
-            create: jest.fn(),
-            findAll: jest.fn(),
-            findOne: jest.fn(),
-            update: jest.fn(),
-            remove: jest.fn(),
-          },
-        },
-      ],
+      providers: [PersonasService],
     }).compile();
 
     controller = module.get<PersonasController>(PersonasController);
